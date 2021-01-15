@@ -13,7 +13,7 @@ spark = SparkSession.builder.appName('walmart_stock').getOrCreate()
 sc = spark.sparkContext
 
 #2-Load the Walmart Stock CSV File
-df=spark.read.csv('filename.csv',header=True)
+df=spark.read.csv("walmart_stock.csv",header=True)
 df.createOrReplaceTempView('Table')
 spark.sql("""SELECT * FROM Table""").show()
 
